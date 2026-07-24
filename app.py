@@ -342,3 +342,24 @@ else:
             st.markdown(f'<div class="article-card"><div><span class="article-index">注目記事 {i+1}</span><div class="article-title">{art.get("title")}</div><div class="article-summary">{art.get("summary")}</div></div></div>', unsafe_allow_html=True)
             st.link_button(f"記事をウェブで開く ↗️", art.get('url'), use_container_width=True)
             st.write("")
+# ---------------------------------------------------------
+    # ここから下を追加：司令塔（ポータル）機能
+    # ---------------------------------------------------------
+    st.markdown("---")
+    st.markdown("### 🚀 次のステップ（記事作成 〜 サイトへの投稿）")
+    st.info("上のテキストエリアからキーワードをコピーしたら、以下の順番で作業を進めてください。")
+    
+    col_ai, col_cms = st.columns(2)
+    
+    with col_ai:
+        st.markdown("#### STEP 2: AIに記事を書かせる")
+        st.write("コピーしたキーワードをAIチャットに貼り付けて、HTML記事を作成させます。")
+        # ※必要に応じて、よく使うAIのURLに変更してください
+        st.link_button("🤖 Gemini を開く ↗", "https://gemini.google.com/app", use_container_width=True)
+        # st.link_button("🤖 ChatGPT を開く ↗", "https://chatgpt.com/", use_container_width=True)
+        
+    with col_cms:
+        st.markdown("#### STEP 3: サイトに投稿する")
+        st.write("AIが作成したHTMLコードをコピーし、管理画面に貼り付けて公開します。")
+        # ※実際にお使いの比較サイトの管理画面URLに書き換えてください
+        st.link_button("📝 管理画面（CMS）を開く ↗", "https://your-cms-url.com/login", use_container_width=True, type="primary")
